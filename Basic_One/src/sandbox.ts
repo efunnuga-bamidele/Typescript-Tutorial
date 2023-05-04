@@ -138,41 +138,63 @@
 // console.log(ninja);
 
 
-// Functions
+// // Functions
 
-let greet: Function;
+// let greet: Function;
 
-greet = () => {
-    console.log("Hello World Function");
-}
+// greet = () => {
+//     console.log("Hello World Function");
+// }
 
-greet();
+// greet();
 
 
-// const add = (a: number, b: number) => {
-//     console.log(a + b);
-// };
+// // const add = (a: number, b: number) => {
+// //     console.log(a + b);
+// // };
 
-// const add = (a: number, b: number, c?:number | string) => {
+// // const add = (a: number, b: number, c?:number | string) => {
+// //     console.log(a + b);
+// //     console.log(c);
+// // };
+
+// const add = (a: number, b: number, c:number | string = 0) => {
 //     console.log(a + b);
 //     console.log(c);
 // };
 
-const add = (a: number, b: number, c:number | string = 0) => {
-    console.log(a + b);
-    console.log(c);
-};
-
-add(5, 10 , '20');
+// add(5, 10 , '20');
 
 
-// const minus = (a: number, b: number) => {
+// // const minus = (a: number, b: number) => {
+// //     return a + b;
+// // };
+
+// const minus = (a: number, b: number): number => {
 //     return a + b;
 // };
 
-const minus = (a: number, b: number): number => {
-    return a + b;
+// let result = minus(10, 7);
+// console.log(result);
+
+// Type Aliases
+
+
+// const logdetails = (uid: string | number, item: string) => {
+//     console.log(`${item} has a uid of ${uid}`);
+// };
+
+// const greet = (user: {name: string, uid: string | number}) => {
+//     console.log(`${user.name} says hello`);
+// };
+
+type StringOrNum = string | number;
+type objWithName = { name: string, uid: StringOrNum};
+
+const logdetails = (uid: StringOrNum, item: string) => {
+    console.log(`${item} has a uid of ${uid}`);
 };
 
-let result = minus(10, 7);
-console.log(result);
+const greet = (user: objWithName) => {
+    console.log(`${user.name} says hello`);
+};
