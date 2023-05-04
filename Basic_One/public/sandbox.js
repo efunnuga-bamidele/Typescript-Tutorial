@@ -1,3 +1,4 @@
+"use strict";
 // let character = 'Luigi';
 // let age = 30;
 // let isBlackBelt = false;
@@ -74,7 +75,7 @@
 // };
 // ninjaTwo = {name : 'mario', age: 20, beltColor: 'black'};
 // Any Type
-var age;
+let age;
 age = 25;
 age = true;
 console.log(age);
@@ -82,11 +83,11 @@ age = 'hello';
 console.log(age);
 age = { name: 'luigi' };
 console.log(age);
-var mixed = [];
+let mixed = [];
 mixed.push(5);
 mixed.push('mario');
 mixed.push(true);
 console.log(mixed);
-var ninja;
+let ninja;
 ninja = { name: 'yoshi', age: 25 };
 console.log(ninja);
