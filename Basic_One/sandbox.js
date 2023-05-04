@@ -44,28 +44,49 @@
 //     belt: 'orange',
 //     age: 40
 // }
-// // Explicit types
-var character;
+// // // Explicit types
+// let character: string;
+// let age: number;
+// let isLoggedIn: boolean;
+// age = 30;
+// isLoggedIn = true;
+// // arrays
+// let ninja: string[] = [];
+// ninja = ['Mario', 'Luigi', 'Yoshi'];
+// // ninja.push('shaun');
+// console.log(ninja);
+// // union types 
+// let mixed: (string|number|boolean) [] = [];
+// mixed.push('hello');
+// mixed.push(20);
+// mixed.push(false);
+// console.log(mixed);
+// let uid: string|number;
+// uid = 123;
+// uid = '123';
+// // objects
+// let ninjaOne: object;
+// ninjaOne = { name: 'yoshi', age: 50};
+// let ninjaTwo: {
+//     name: string,
+//     age: number,
+//     beltColor: string
+// };
+// ninjaTwo = {name : 'mario', age: 20, beltColor: 'black'};
+// Any Type
 var age;
-var isLoggedIn;
-age = 30;
-isLoggedIn = true;
-// arrays
-var ninja = [];
-ninja = ['Mario', 'Luigi', 'Yoshi'];
-// ninja.push('shaun');
-console.log(ninja);
-// union types 
+age = 25;
+age = true;
+console.log(age);
+age = 'hello';
+console.log(age);
+age = { name: 'luigi' };
+console.log(age);
 var mixed = [];
-mixed.push('hello');
-mixed.push(20);
-mixed.push(false);
+mixed.push(5);
+mixed.push('mario');
+mixed.push(true);
 console.log(mixed);
-var uid;
-uid = 123;
-uid = '123';
-// objects
-var ninjaOne;
-ninjaOne = { name: 'yoshi', age: 50 };
-var ninjaTwo;
-ninjaTwo = { name: 'mario', age: 20, beltColor: 'black' };
+var ninja;
+ninja = { name: 'yoshi', age: 25 };
+console.log(ninja);

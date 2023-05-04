@@ -64,48 +64,77 @@
 //     age: 40
 // }
 
-// // Explicit types
-let character: string;
-let age: number;
-let isLoggedIn: boolean;
+// // // Explicit types
+// let character: string;
+// let age: number;
+// let isLoggedIn: boolean;
 
-age = 30;
+// age = 30;
 
-isLoggedIn = true;
+// isLoggedIn = true;
 
-// arrays
+// // arrays
 
-let ninja: string[] = [];
+// let ninja: string[] = [];
 
-ninja = ['Mario', 'Luigi', 'Yoshi'];
-// ninja.push('shaun');
+// ninja = ['Mario', 'Luigi', 'Yoshi'];
+// // ninja.push('shaun');
 
-console.log(ninja);
+// console.log(ninja);
 
-// union types 
+// // union types 
 
-let mixed: (string|number|boolean) [] = [];
+// let mixed: (string|number|boolean) [] = [];
 
-mixed.push('hello');
-mixed.push(20);
-mixed.push(false);
+// mixed.push('hello');
+// mixed.push(20);
+// mixed.push(false);
+
+// console.log(mixed);
+
+// let uid: string|number;
+// uid = 123;
+// uid = '123';
+
+// // objects
+// let ninjaOne: object;
+// ninjaOne = { name: 'yoshi', age: 50};
+
+// let ninjaTwo: {
+//     name: string,
+//     age: number,
+//     beltColor: string
+// };
+
+// ninjaTwo = {name : 'mario', age: 20, beltColor: 'black'};
+
+// Any Type
+
+let age: any;
+
+age = 25;
+age = true;
+
+console.log(age);
+
+age = 'hello';
+console.log(age);
+
+age = { name: 'luigi'};
+console.log(age);
+
+let mixed: any[] = [];
+
+mixed.push(5);
+mixed.push('mario');
+mixed.push(true);
 
 console.log(mixed);
 
-let uid: string|number;
-uid = 123;
-uid = '123';
+let ninja: { name: any, age: any};
 
-// objects
-let ninjaOne: object;
-ninjaOne = { name: 'yoshi', age: 50};
+ninja = { name: 'yoshi', age: 25};
 
-let ninjaTwo: {
-    name: string,
-    age: number,
-    beltColor: string
-};
-
-ninjaTwo = {name : 'mario', age: 20, beltColor: 'black'};
+console.log(ninja);
 
 
