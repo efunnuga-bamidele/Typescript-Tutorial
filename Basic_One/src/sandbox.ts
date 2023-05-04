@@ -108,33 +108,71 @@
 
 // ninjaTwo = {name : 'mario', age: 20, beltColor: 'black'};
 
-// Any Type
+// // Any Type
 
-let age: any;
+// let age: any;
 
-age = 25;
-age = true;
+// age = 25;
+// age = true;
 
-console.log(age);
+// console.log(age);
 
-age = 'hello';
-console.log(age);
+// age = 'hello';
+// console.log(age);
 
-age = { name: 'luigi'};
-console.log(age);
+// age = { name: 'luigi'};
+// console.log(age);
 
-let mixed: any[] = [];
+// let mixed: any[] = [];
 
-mixed.push(5);
-mixed.push('mario');
-mixed.push(true);
+// mixed.push(5);
+// mixed.push('mario');
+// mixed.push(true);
 
-console.log(mixed);
+// console.log(mixed);
 
-let ninja: { name: any, age: any};
+// let ninja: { name: any, age: any};
 
-ninja = { name: 'yoshi', age: 25};
+// ninja = { name: 'yoshi', age: 25};
 
-console.log(ninja);
+// console.log(ninja);
 
 
+// Functions
+
+let greet: Function;
+
+greet = () => {
+    console.log("Hello World Function");
+}
+
+greet();
+
+
+// const add = (a: number, b: number) => {
+//     console.log(a + b);
+// };
+
+// const add = (a: number, b: number, c?:number | string) => {
+//     console.log(a + b);
+//     console.log(c);
+// };
+
+const add = (a: number, b: number, c:number | string = 0) => {
+    console.log(a + b);
+    console.log(c);
+};
+
+add(5, 10 , '20');
+
+
+// const minus = (a: number, b: number) => {
+//     return a + b;
+// };
+
+const minus = (a: number, b: number): number => {
+    return a + b;
+};
+
+let result = minus(10, 7);
+console.log(result);
