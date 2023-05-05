@@ -117,22 +117,45 @@ console.log(docUID);
 
 // with interface
 
+// interface Resource<T> {
+//     uid: number;
+//     resourceName: string;
+//     data: T;
+// };
+
+// const docThree: Resource<object> = {
+//     uid: 1,
+//     resourceName: 'person',
+//     data: {name: 'shaun'}
+// }
+
+// const docFour: Resource<string[]> = {
+//     uid:2,
+//     resourceName: 'shoppingList',
+//     data: ['bread', 'milk', 'toilet roll']
+// }
+
+// console.log(docThree, docFour);
+
+// Enum
+
+enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
 interface Resource<T> {
     uid: number;
-    resourceName: string;
+    resourceType: ResourceType;
     data: T;
 };
 
 const docThree: Resource<object> = {
     uid: 1,
-    resourceName: 'person',
+    resourceType: ResourceType.PERSON,
     data: {name: 'shaun'}
 }
 
-const docFour: Resource<string[]> = {
+const docFour: Resource<object> = {
     uid:2,
-    resourceName: 'shoppingList',
-    data: ['bread', 'milk', 'toilet roll']
+    resourceType: ResourceType.BOOK,
+    data: {title: 'name of the wind'}
 }
 
 console.log(docThree, docFour);
