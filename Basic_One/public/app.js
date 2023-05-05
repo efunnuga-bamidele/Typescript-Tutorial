@@ -1,3 +1,20 @@
+// Interfaces
+const me = {
+    name: "shaun",
+    age: 30,
+    speak(text) {
+        console.log(text);
+    },
+    spend(amount) {
+        console.log('I spent', amount);
+        return amount;
+    }
+};
+console.log(me);
+const greetPerson = (person) => {
+    console.log('Hello', person.name);
+};
+greetPerson(me);
 import { Invoice } from "./modules/invoice.js";
 const invOne = new Invoice('Mario', 'work on the mario website', 250);
 const invTwo = new Invoice('Luigi', 'work on the luigi website', 300);
