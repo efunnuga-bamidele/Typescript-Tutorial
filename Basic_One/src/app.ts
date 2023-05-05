@@ -86,11 +86,16 @@ const list = new ListTemplate(ul);
 form.addEventListener('submit', (e: Event) => {
     e.preventDefault();
 
+    let values: [string, string, number] //implementing tuples
+    values = [tofrom.value, details.value, amount.valueAsNumber];
+
     let doc: HasFormatter;
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        // doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     } else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        // doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     // console.log(doc);
     list.render(doc, type.value, 'end');
@@ -102,7 +107,7 @@ form.addEventListener('submit', (e: Event) => {
 
 // const addUID = (obj: object) => {
 // const addUID = <T extends object>(obj: T) => {
-const addUID = <T extends {name: string}>(obj: T) => {
+const addUID = <T extends { name: string }>(obj: T) => {
     let uid = Math.floor(Math.random() * 100);
     return {
         ...obj,
@@ -137,26 +142,37 @@ console.log(docUID);
 
 // console.log(docThree, docFour);
 
-// Enum
+// // Enum
 
-enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
-interface Resource<T> {
-    uid: number;
-    resourceType: ResourceType;
-    data: T;
-};
+// enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
+// interface Resource<T> {
+//     uid: number;
+//     resourceType: ResourceType;
+//     data: T;
+// };
 
-const docThree: Resource<object> = {
-    uid: 1,
-    resourceType: ResourceType.PERSON,
-    data: {name: 'shaun'}
-}
+// const docThree: Resource<object> = {
+//     uid: 1,
+//     resourceType: ResourceType.PERSON,
+//     data: {name: 'shaun'}
+// }
 
-const docFour: Resource<object> = {
-    uid:2,
-    resourceType: ResourceType.BOOK,
-    data: {title: 'name of the wind'}
-}
+// const docFour: Resource<object> = {
+//     uid:2,
+//     resourceType: ResourceType.BOOK,
+//     data: {title: 'name of the wind'}
+// }
 
-console.log(docThree, docFour);
+// console.log(docThree, docFour);
+
+
+// tuples
+
+let tup: [string, number, boolean] = ['ryu', 25, true];
+tup[0] = 'ken';
+tup[1] = 30
+
+
+let student: [string, number];
+student = ['shaun', 323565]
 

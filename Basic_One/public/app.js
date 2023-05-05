@@ -59,12 +59,16 @@ const ul = document.querySelector('ul');
 const list = new ListTemplate(ul);
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    let values; //implementing tuples
+    values = [tofrom.value, details.value, amount.valueAsNumber];
     let doc;
     if (type.value === 'invoice') {
-        doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        // doc = new Invoice(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Invoice(...values);
     }
     else {
-        doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        // doc = new Payment(tofrom.value, details.value, amount.valueAsNumber);
+        doc = new Payment(...values);
     }
     // console.log(doc);
     list.render(doc, type.value, 'end');
@@ -95,24 +99,27 @@ console.log(docUID);
 //     data: ['bread', 'milk', 'toilet roll']
 // }
 // console.log(docThree, docFour);
-// Enum
-var ResourceType;
-(function (ResourceType) {
-    ResourceType[ResourceType["BOOK"] = 0] = "BOOK";
-    ResourceType[ResourceType["AUTHOR"] = 1] = "AUTHOR";
-    ResourceType[ResourceType["FILM"] = 2] = "FILM";
-    ResourceType[ResourceType["DIRECTOR"] = 3] = "DIRECTOR";
-    ResourceType[ResourceType["PERSON"] = 4] = "PERSON";
-})(ResourceType || (ResourceType = {}));
-;
-const docThree = {
-    uid: 1,
-    resourceType: ResourceType.PERSON,
-    data: { name: 'shaun' }
-};
-const docFour = {
-    uid: 2,
-    resourceType: ResourceType.BOOK,
-    data: { title: 'name of the wind' }
-};
-console.log(docThree, docFour);
+// // Enum
+// enum ResourceType { BOOK, AUTHOR, FILM, DIRECTOR, PERSON }
+// interface Resource<T> {
+//     uid: number;
+//     resourceType: ResourceType;
+//     data: T;
+// };
+// const docThree: Resource<object> = {
+//     uid: 1,
+//     resourceType: ResourceType.PERSON,
+//     data: {name: 'shaun'}
+// }
+// const docFour: Resource<object> = {
+//     uid:2,
+//     resourceType: ResourceType.BOOK,
+//     data: {title: 'name of the wind'}
+// }
+// console.log(docThree, docFour);
+// tuples
+let tup = ['ryu', 25, true];
+tup[0] = 'ken';
+tup[1] = 30;
+let student;
+student = ['shaun', 323565];
